@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+      <class name="com.mycompany.chatconnect.Message" table="message" catalog="chat">
+      <id name="id" type="int">
+          <column name="id"/>
+      </id>
+      <property name="from" type="string">
+          <column name="from"/>
+      </property>
+      <property name="to" type="string">
+          <column name="to"/>
+      </property>
+      <property name="message" type="string">
+          <column name="message"/>
+      </property>
+</hibernate-mapping>

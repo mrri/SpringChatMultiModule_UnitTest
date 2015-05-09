@@ -7,8 +7,8 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
     <!--Database-->
-    <!--<context:annotation-config proxy-target-class="true"/>
-    <bean id="connectDB" class="com.mycompany.spring_chatdemo.ConnectDB">-->
+    <context:annotation-config proxy-target-class="true"/>
+    <!--<bean id="connectDB" class="com.mycompany.spring_chatdemo.ConnectDB">-->
         <!--<property name="dataSource" ref="dataSource"/>-->
     <!--</bean> 
     
@@ -25,4 +25,21 @@
     <bean id="receiver" class="com.mycompany.chatconnect.Receiver">
     </bean>
     
+   <!--<bean id="messageDao" class="com.mycompany.chatdatabase.MessageDAO">
+       <property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+    
+   <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+       <property name="configLocation" >
+           <value>hibernate.cfg.xml</value>
+       </property>
+   </bean>-->
+   <!--<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+       <property name="sessionFactory" ref="sessionFactory">
+       </property>
+   </bean> 
+
+    <bean id="connectDB" class="com.mycompany.chatdatabase.ConnectDB>
+        <property name="hibernatetemplate" ref="hibernateTemmplate"></property>
+    </bean>-->
 </beans>

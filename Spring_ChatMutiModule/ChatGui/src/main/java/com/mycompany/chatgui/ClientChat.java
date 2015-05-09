@@ -2,11 +2,7 @@ package com.mycompany.chatgui;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
-import java.io.PrintStream;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +23,7 @@ public class ClientChat extends javax.swing.JFrame {
     Thread threadReceiver;
     public static String to = "anonymous";
     //public static ConnectDB connectDB;
-    public static DefaultListModel modelMessage;
+    public static DefaultListModel modelMessage;//dynamic list dung de insert message
     public static Message message;
     ApplicationContext context;
     public ClientChat() {
@@ -203,12 +199,14 @@ public class ClientChat extends javax.swing.JFrame {
         try {
             portDes = Integer.parseInt(tbPortDes.getText());
             Sender sender;
-            sender = (Sender) context.getBean("sender");
+            sender = (Sender) context.getBean("sender");//sender duoc tao boi bean
             sender.setIp(tbIp.getText());
             sender.setPort(portDes);
             sender.setModel(modelMessage);
             sender.connetClient(message);
-            //new Sender(tbIp.getText(), portDes);
+            //MessageDAO db = context.getBean(MessageDAO.class);
+            //ConnectDB db = context.getBean(ConnectDB.class);
+            //db.save(message);
             tbMessage.setText(null);
         } catch (IOException ex) {
             Logger.getLogger(ClientChat.class.getName()).log(Level.SEVERE, null, ex);
